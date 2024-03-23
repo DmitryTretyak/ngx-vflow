@@ -1,22 +1,22 @@
 // Modules
-export * from './lib/vdoc/vdoc.module';
 export * from './lib/vflow/vflow.module';
 
 // Interfaces
-export * from './lib/vdoc/interfaces/stylesheet.interface';
-export * from './lib/vdoc/interfaces/ui-snapshot.interface';
-export * from './lib/vdoc/interfaces/style-function.interface';
 export * from './lib/vflow/interfaces/node.interface';
+export * from './lib/vflow/interfaces/point.interface';
+export * from './lib/vflow/interfaces/edge.interface';
+export * from './lib/vflow/interfaces/edge-label.interface';
+export * from './lib/vflow/interfaces/connection.interface';
+export * from './lib/vflow/interfaces/connection.interface';
+export * from './lib/vflow/interfaces/connection-settings.interface';
+export * from './lib/vflow/interfaces/handle-positions.interface';
+export * from './lib/vflow/interfaces/marker.interface';
+export { ViewportState } from './lib/vflow/interfaces/viewport.interface';
 
 // Types
-export * from './lib/vflow/types/node-change.type'
-export * from './lib/vflow/types/edge-change.type'
-
-// Utils
-export * from './lib/vdoc/utils/provide-component';
-export * from './lib/vdoc/utils/ui-snapshot';
-export * from './lib/shared/utils/uuid';
+export * from './lib/vflow/types/node-change.type';
+export * from './lib/vflow/types/edge-change.type';
+export * from './lib/vflow/types/position.type';
 
 // Components
-export * from './lib/vdoc/components/vdoc-component/vdoc.component';
 export * from './lib/vflow/components/vflow/vflow.component';

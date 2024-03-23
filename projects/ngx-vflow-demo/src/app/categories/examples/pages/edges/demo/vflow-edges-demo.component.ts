@@ -1,15 +1,12 @@
 import { AfterViewInit, ChangeDetectionStrategy, Component, ViewChild } from '@angular/core';
-import { ConnectionSettings } from 'projects/ngx-vflow-lib/src/lib/vflow/interfaces/connection-settings.interface';
-import { Connection } from 'projects/ngx-vflow-lib/src/lib/vflow/interfaces/connection.interface';
-import { Edge } from 'projects/ngx-vflow-lib/src/lib/vflow/interfaces/edge.interface';
-import { Node, VDocModule, VflowComponent, VflowModule, uuid } from 'projects/ngx-vflow-lib/src/public-api';
+import { Connection, ConnectionSettings, Edge, Node, VflowComponent, VflowModule } from 'projects/ngx-vflow-lib/src/public-api';
 
 @Component({
   templateUrl: './vflow-edges-demo.component.html',
   styleUrls: ['./vflow-edges-demo.styles.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [VflowModule, VDocModule]
+  imports: [VflowModule]
 })
 export class VflowEdgesDemoComponent implements AfterViewInit {
   public nodes: Node[] = [
@@ -68,7 +65,7 @@ export class VflowEdgesDemoComponent implements AfterViewInit {
 
   public addNode() {
     this.nodes = [...this.nodes, {
-      id: uuid(),
+      id: crypto.randomUUID(),
       point: { x: 200, y: 200 },
       type: 'html-template'
     }]
@@ -77,7 +74,7 @@ export class VflowEdgesDemoComponent implements AfterViewInit {
 
 function createEdge(source: string, target: string): Edge {
   return {
-    id: uuid(),
+    id: crypto.randomUUID(),
     source,
     target,
     type: 'default',
